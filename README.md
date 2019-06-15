@@ -1,4 +1,4 @@
-# CustomerCrudReduxSample
+# ReduxMvvmSample
 Applying Redux architecture to a WPF app together with MVVM
 
 This is a simple Customer CRUD application. The purpose is to show Redux.net together with MVVM in WPF application. 
