@@ -1,0 +1,34 @@
+﻿<Window x:Class="CustomerCrudReduxSample.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomerCrudReduxSample.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="10">
+        <StackPanel MinWidth="200" HorizontalAlignment="Left">
+            <TextBlock FontWeight="Bold" Text="First name:"></TextBlock>
+            <TextBox Text="{Binding FirstName, Mode=TwoWay}"></TextBox>
+            <TextBlock FontWeight="Bold" Text="Last name:"></TextBlock>
+            <TextBox Text="{Binding LastName, Mode=TwoWay}"></TextBox>
+            <TextBlock FontWeight="Bold" Text="Age:"></TextBlock>
+            <TextBox Text="{Binding Age, Mode=TwoWay}"></TextBox>
+            <Button Margin="0,5" Content="Save" Command="{Binding AddCustomerCommand}"></Button>
+        </StackPanel>
+        <ListView ItemsSource="{Binding State.Customers}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock FontWeight="Bold" Text="First name:"></TextBlock>
+                        <TextBlock Text="{Binding FirstName}"></TextBlock>
+                        <TextBlock FontWeight="Bold" Text="Last name:"></TextBlock>
+                        <TextBlock Text="{Binding LastName}"></TextBlock>
+                        <TextBlock FontWeight="Bold" Text="Age:"></TextBlock>
+                        <TextBlock Text="{Binding Age}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Window>
